@@ -3,7 +3,7 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 
 export default defineConfig({
-  base: "/nextsoft/",
+  base: "/nexksoft/",
   plugins: [react()],
   resolve: {
     alias: {

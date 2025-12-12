@@ -14,8 +14,8 @@ Advanced SAP Training for Students and Working Professionals
 
 ```bash
 # Clone the repository
-git clone https://github.com/lazypandaa/nextsoft.git
-cd nextsoft
+git clone https://github.com/lazypandaa/nexksoft.git
+cd nexksoft
 
 # Install dependencies
 npm install
