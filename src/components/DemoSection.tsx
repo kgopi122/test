@@ -65,7 +65,7 @@ const DemoSection = () => {
             ) : (
               <div className="aspect-video">
                 <iframe
-                  src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"
+                  src="https://www.youtube.com/embed/eIho2S0ZahI?autoplay=1"
                   title="Demo Video"
                   className="w-full h-full"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

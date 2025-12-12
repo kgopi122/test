@@ -100,7 +100,7 @@ const HeroSection = () => {
               <DialogContent className="max-w-4xl p-0 bg-black border-none overflow-hidden">
                 <div className="aspect-video">
                   <iframe
-                    src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"
+                    src="https://www.youtube.com/embed/eIho2S0ZahI?autoplay=1"
                     title="Demo Video"
                     className="w-full h-full"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
