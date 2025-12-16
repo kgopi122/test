@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
@@ -35,11 +36,10 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "glass-effect border-b shadow-sm"
-          : "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
+        ? "glass-effect border-b shadow-sm"
+        : "bg-transparent"
+        }`}
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
@@ -64,15 +64,14 @@ const Navbar = () => {
           <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
               link.isRoute ? (
-                <a
+                <Link
                   key={link.href}
-                  href={link.href}
-                  className={`text-sm font-medium transition-colors hover:text-primary ${
-                    isScrolled ? "text-foreground" : "text-white/90 hover:text-white"
-                  }`}
+                  to={link.href}
+                  className={`text-sm font-medium transition-colors hover:text-primary ${isScrolled ? "text-foreground" : "text-white/90 hover:text-white"
+                    }`}
                 >
                   {link.label}
-                </a>
+                </Link>
               ) : (
                 <a
                   key={link.href}
@@ -81,9 +80,8 @@ const Navbar = () => {
                     e.preventDefault();
                     scrollToSection(link.href);
                   }}
-                  className={`text-sm font-medium transition-colors hover:text-primary ${
-                    isScrolled ? "text-foreground" : "text-white/90 hover:text-white"
-                  }`}
+                  className={`text-sm font-medium transition-colors hover:text-primary ${isScrolled ? "text-foreground" : "text-white/90 hover:text-white"
+                    }`}
                 >
                   {link.label}
                 </a>
@@ -108,13 +106,13 @@ const Navbar = () => {
               <div className="flex flex-col gap-6 mt-8">
                 {navLinks.map((link) => (
                   link.isRoute ? (
-                    <a
+                    <Link
                       key={link.href}
-                      href={link.href}
+                      to={link.href}
                       className="text-lg font-medium text-foreground hover:text-primary transition-colors"
                     >
                       {link.label}
-                    </a>
+                    </Link>
                   ) : (
                     <a
                       key={link.href}
