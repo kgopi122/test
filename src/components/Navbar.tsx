@@ -6,7 +6,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 const navLinks = [
   { href: "#home", label: "Home" },
   { href: "#about", label: "About" },
-  { href: "#courses", label: "Courses" },
+  { href: "/courses", label: "All Courses", isRoute: true },
   { href: "#demo", label: "Demo" },
   { href: "#why-us", label: "Why Us" },
   { href: "#testimonials", label: "Testimonials" },
@@ -63,19 +63,31 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection(link.href);
-                }}
-                className={`text-sm font-medium transition-colors hover:text-primary ${
-                  isScrolled ? "text-foreground" : "text-white/90 hover:text-white"
-                }`}
-              >
-                {link.label}
-              </a>
+              link.isRoute ? (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className={`text-sm font-medium transition-colors hover:text-primary ${
+                    isScrolled ? "text-foreground" : "text-white/90 hover:text-white"
+                  }`}
+                >
+                  {link.label}
+                </a>
+              ) : (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection(link.href);
+                  }}
+                  className={`text-sm font-medium transition-colors hover:text-primary ${
+                    isScrolled ? "text-foreground" : "text-white/90 hover:text-white"
+                  }`}
+                >
+                  {link.label}
+                </a>
+              )
             ))}
             <Button
               onClick={() => scrollToSection("#contact")}
@@ -95,17 +107,27 @@ const Navbar = () => {
             <SheetContent side="right" className="w-72 bg-card">
               <div className="flex flex-col gap-6 mt-8">
                 {navLinks.map((link) => (
-                  <a
-                    key={link.href}
-                    href={link.href}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      scrollToSection(link.href);
-                    }}
-                    className="text-lg font-medium text-foreground hover:text-primary transition-colors"
-                  >
-                    {link.label}
-                  </a>
+                  link.isRoute ? (
+                    <a
+                      key={link.href}
+                      href={link.href}
+                      className="text-lg font-medium text-foreground hover:text-primary transition-colors"
+                    >
+                      {link.label}
+                    </a>
+                  ) : (
+                    <a
+                      key={link.href}
+                      href={link.href}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        scrollToSection(link.href);
+                      }}
+                      className="text-lg font-medium text-foreground hover:text-primary transition-colors"
+                    >
+                      {link.label}
+                    </a>
+                  )
                 ))}
                 <Button
                   onClick={() => scrollToSection("#contact")}
